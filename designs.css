@@ -3,7 +3,10 @@ html {
   width: 100vw;
   background: url('bg_desktop.jpg');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: #ffffff;
 }
 
 body {
