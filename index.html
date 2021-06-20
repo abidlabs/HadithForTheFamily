@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <!-- Styling -->
     <link rel="stylesheet" href="./designs.css">
+    <link rel="stylesheet" href="./loader.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
   </head>
   <body>
 
-    <div class="parent">
+    <div id="content" class="parent">
       <div class="date"><span id="date">June 16</span></div>
 
       <div class="topic"><strong>~ <span id="topic">GENTLENESS</span> ~</strong></div>
@@ -36,10 +37,11 @@
       </div>
     </div>
 
-    <!--- Scripts-->
-    <script>
+    <div id="loader" class="holder">
+      <div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
 
-    </script>
+    <!--- Scripts-->
     <script src="./script.js"></script>
   </body>
 </html>
