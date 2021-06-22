@@ -1,10 +1,20 @@
 /* Designs for Mobile Resolution */
 @media screen and (max-width: 576px) {
+  html {
+    font-size: 9px;
+  }
+
+  .parent {
+    height: 83vh;
+    margin-top: 15%;
+  }
+
   .hadith {
     width: 85vw;
   }
 
   .application {
     width: 85vw;
+    font-size: 1.2rem;
   }
 }
