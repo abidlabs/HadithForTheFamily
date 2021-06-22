@@ -7,6 +7,7 @@ const apply = document.getElementById("application");
 
 const contentDiv = document.getElementById('content')
 const loader = document.getElementById('loader')
+const root = document.getElementsByTagName('html')[0];
 
 
 const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1OzOb4jUF0OY32RyHuEg1wqGioOkeR76Y5cfpEXfal1s/1/public/full?alt=json";
@@ -68,6 +69,7 @@ function disableLoading() {
   loading = false;
   contentDiv.style.display = 'flex';
   loader.style.display = 'none';
+  root.style.backgroundImage = "url('bg_desktop.jpg')";
 }
 
 window.onload = loadPageData;
