@@ -1,0 +1,10 @@
+/* Designs for Mobile Resolution */
+@media screen and (max-width: 576px) {
+  .hadith {
+    width: 85vw;
+  }
+
+  .application {
+    width: 85vw;
+  }
+}
