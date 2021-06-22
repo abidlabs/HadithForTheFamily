@@ -11,6 +11,7 @@ const root = document.getElementsByTagName('html')[0];
 
 
 const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1OzOb4jUF0OY32RyHuEg1wqGioOkeR76Y5cfpEXfal1s/1/public/full?alt=json";
+const GET_PUBLIC_SLIDE_DATA = "https://docs.google.com/presentation/d/1rNJBwe-hhe5uP3Y_b9WLc-zKt1Fv0PwXG3L9GIOAJqc/edit#slide=id.ge061545ad0_1_14";
 
 var loading = true;
 
@@ -69,7 +70,13 @@ function disableLoading() {
   loading = false;
   contentDiv.style.display = 'flex';
   loader.style.display = 'none';
-  root.style.backgroundImage = "url('bg_desktop.jpg')";
+  setBackgroundImage();
+}
+
+function setBackgroundImage() {
+  const width = this.window.innerWidth;
+  if (width > 992) root.style.backgroundImage = "url('bg_desktop.jpg')";
+  else root.style.backgroundImage = "url('bg_low_res.jpg')";
 }
 
 window.onload = loadPageData;
