@@ -1,7 +1,7 @@
 /* Designs for Mobile Resolution */
 @media screen and (max-width: 576px) {
   html {
-    font-size: 9px;
+    font-size: 9.5px;
   }
 
   .parent {
