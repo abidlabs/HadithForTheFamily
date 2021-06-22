@@ -1,0 +1,43 @@
+/* Designs for Mobile Resolution */
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 9.5px;
+  }
+
+  .parent {
+    height: 83vh;
+    margin-top: 19%;
+  }
+
+  .hadith {
+    width: 85vw;
+  }
+
+  .application {
+    width: 85vw;
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablets / iPads */
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  html {
+    font-size: 13px;
+  }
+
+  .parent {
+    height: 83vh;
+    margin-top: 15%;
+  }
+
+  .hadith {
+    width: 85vw;
+  }
+
+  .application {
+    width: 85vw;
+    font-size: 1.2rem;
+    background-color: indianred;
+  }
+}
