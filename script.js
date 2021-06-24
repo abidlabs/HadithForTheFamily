@@ -79,4 +79,29 @@ function setBackgroundImage() {
   else root.style.backgroundImage = "url('bg_low_res.jpg')";
 }
 
+var navOpened = false;
+
+// function openNav() {
+//   navOpened = true;
+//   document.getElementById("sidenav").style.width = "250px";
+//   document.getElementById("navIcon").style.left = "280px";
+// }
+
+// function closeNav() {
+//   navOpened = false;
+//   document.getElementById("sidenav").style.width = "0";
+//   document.getElementById("navIcon").style.left = "30px";
+// }
+
+function toggleNav() {
+  navOpened = !navOpened;
+  if (navOpened) {
+    document.getElementById("sidenav").style.width = "250px";
+    document.getElementById("navIcon").style.left = "280px";
+  } else {
+    document.getElementById("sidenav").style.width = "0";
+    document.getElementById("navIcon").style.left = "30px";
+  }
+}
+
 window.onload = loadPageData;
