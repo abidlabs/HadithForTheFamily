@@ -82,35 +82,33 @@ body {
 /* SideNav styles */
 
 .nav-icon {
-  height: 40px;
-  width: 40px;
-  background-color: #F0E8CC;
+  height: 6.25rem;
+  width: 6.25rem;
+  line-height: 6.25rem;
+  background-color: #3d3b3b;
+  color: #F0E8CC;
   border-radius: 50%;
-  padding: 2rem;
-  padding-left: 2.5rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   cursor: pointer;
   z-index: 1;
-  left: 30px;
-
+  right: -6vw;
   position: absolute;
   margin: 0;
   top: 50%;
   -ms-transform: translate(-70%, -50%);
   transform: translate(-70%, -50%);
-
   transition: 0.5s;
 }
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 15.625rem;
   position: fixed;
   z-index: 2;
   top: 0;
-  left: 0;
-  background-color: #111;
+  right: -14vw;
+  background-color: #3d3b3b;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -120,7 +118,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #F0E8CC;
   display: block;
   transition: 0.3s;
 }
@@ -142,7 +140,8 @@ body {
   padding: 16px;
 } */
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 768px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+
 }
