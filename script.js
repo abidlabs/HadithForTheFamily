@@ -85,11 +85,13 @@ function toggleNav() {
   if (navOpened) {
     // document.getElementById("sidenav").style.width = "250px";
     document.getElementById("sidenav").style.right = "0vw";
-    document.getElementById("navIcon").style.right = "8vw";
+    document.getElementById("navIcon").style.right = "9.5rem";
+    document.getElementById("content").style.right = "15.625rem";
   } else {
     // document.getElementById("sidenav").style.width = "0";
-    document.getElementById("sidenav").style.right = "-14vw";
-    document.getElementById("navIcon").style.right = "-6vw";
+    document.getElementById("sidenav").style.right = "-15.625rem";
+    document.getElementById("navIcon").style.right = "-6.25rem";
+    document.getElementById("content").style.right = "0rem";
   }
 }
 

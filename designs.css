@@ -23,11 +23,13 @@ body {
   overflow-y: auto;
   margin-top: 5%;
   overflow-x: hidden;
-
+  right: 0;
 
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+  transition: 0.5s;
 }
 
 .content::-webkit-scrollbar {
@@ -92,7 +94,7 @@ body {
   text-align: center;
   cursor: pointer;
   z-index: 1;
-  right: -6vw;
+  right: -6.25rem;
   position: absolute;
   margin: 0;
   top: 50%;
@@ -107,7 +109,7 @@ body {
   position: fixed;
   z-index: 2;
   top: 0;
-  right: -14vw;
+  right: -15.625rem;
   background-color: #3d3b3b;
   overflow-x: hidden;
   transition: 0.5s;
@@ -144,4 +146,7 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 
+  .nav-icon {
+    top: 7%;
+  }
 }
