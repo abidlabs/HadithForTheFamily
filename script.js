@@ -1,4 +1,6 @@
 var navOpened = false;
+pages = ['home', 'about', 'email'];
+currentPage = pages[0];
 
 const date = document.getElementById("date");
 const topic = document.getElementById("topic");
@@ -6,7 +8,7 @@ const hadith = document.getElementById("hadith");
 const book = document.getElementById("book");
 const apply = document.getElementById("application");
 
-const contentDiv = document.getElementById('content')
+const homeDiv = document.getElementById('home')
 const loader = document.getElementById('loader')
 const root = document.getElementsByTagName('html')[0];
 
@@ -63,13 +65,13 @@ function loadPageData() {
 }
 
 function enableLoading() {
-  contentDiv.style.display = 'none';
+  homeDiv.style.display = 'none';
   loader.style.display = 'block';
 }
 
 function disableLoading() {
   loading = false;
-  contentDiv.style.display = 'flex';
+  homeDiv.style.display = 'flex';
   loader.style.display = 'none';
   setBackgroundImage();
 }
@@ -82,17 +84,36 @@ function setBackgroundImage() {
 
 function toggleNav() {
   navOpened = !navOpened;
-  if (navOpened) {
-    // document.getElementById("sidenav").style.width = "250px";
-    document.getElementById("sidenav").style.right = "0vw";
-    document.getElementById("navIcon").style.right = "9.5rem";
-    document.getElementById("content").style.right = "15.625rem";
-  } else {
-    // document.getElementById("sidenav").style.width = "0";
-    document.getElementById("sidenav").style.right = "-15.625rem";
-    document.getElementById("navIcon").style.right = "-6.25rem";
-    document.getElementById("content").style.right = "0rem";
-  }
+  if (navOpened) openNav();
+  else closeNav();
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.right = "0vw";
+  document.getElementById("navIcon").style.right = "9.5rem";
+  document.getElementById("parent").style.right = "15.625rem";
+
+  navOpened = true;
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.right = "-15.625rem";
+  document.getElementById("navIcon").style.right = "-6.25rem";
+  document.getElementById("parent").style.right = "0rem";
+
+  navOpened = false;
+}
+
+function showContent(pageName) {
+  if (pages.indexOf(pageName) < 0) { window.location.reload()}
+
+  if (pageName === currentPage) return;
+
+  document.getElementById(pageName).classList.remove('display-none');
+  document.getElementById(currentPage).classList.add('display-none');
+  currentPage = pageName;
+  closeNav();
+  return currentPage;
 }
 
 window.onload = loadPageData;
