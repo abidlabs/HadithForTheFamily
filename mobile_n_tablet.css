@@ -1,12 +1,28 @@
-/* Designs for Mobile Resolution */
+/* Designs for Mobile & Tablets Resolution */
+@media screen and (max-width: 768px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .nav-icon {
+    top: 7%;
+  }
+}
+
 @media screen and (max-width: 576px) {
   html {
     font-size: 9.5px;
   }
 
+  #parent {
+    margin-top: 27%;
+  }
+
   .home {
     height: 83vh;
-    margin-top: 27%;
   }
 
   .hadith {
@@ -20,8 +36,6 @@
     line-height: 2.6rem;
   }
 
-  .about { margin-top: 27%; }
-
   .about-details { width: 85vw; }
 }
 
@@ -32,9 +46,13 @@
     font-size: 13px;
   }
 
+  #parent {
+    margin-top: 17%;
+  }
+
   .home {
     height: 83vh;
-    margin-top: 17%;
+
   }
 
   .hadith {
@@ -46,8 +64,6 @@
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
-
-  .about { margin-top: 17%; }
 
   .about-details { width: 85vw; }
 }

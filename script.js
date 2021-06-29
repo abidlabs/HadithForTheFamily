@@ -14,7 +14,6 @@ const root = document.getElementsByTagName('html')[0];
 
 
 const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1OzOb4jUF0OY32RyHuEg1wqGioOkeR76Y5cfpEXfal1s/1/public/full?alt=json";
-const GET_PUBLIC_SLIDE_DATA = "https://docs.google.com/presentation/d/1rNJBwe-hhe5uP3Y_b9WLc-zKt1Fv0PwXG3L9GIOAJqc/edit#slide=id.ge061545ad0_1_14";
 
 var loading = true;
 

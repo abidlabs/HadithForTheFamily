@@ -1,6 +1,8 @@
 * {
   margin: 0;
+  font-family: 'Raleway', 'sans-serif';
 }
+
 html {
   background-color: #faf7f2;
   background-repeat: no-repeat;
@@ -20,6 +22,7 @@ body {
   right: 0;
   transition: 0.5s;
   position: relative;
+  margin-top: 9%;
 }
 
 .home {
@@ -28,7 +31,6 @@ body {
   align-items: center;
   height: 84vh;
   overflow-y: auto;
-  margin-top: 9%;
   overflow-x: hidden;
 
   overflow-y: scroll;
@@ -47,7 +49,7 @@ body {
   height: 0;
 }
 
-.date {
+.page-title {
   font-family: "Courgette", cursive;
   font-weight: bold;
   font-size: 3.375rem;
@@ -142,22 +144,9 @@ body {
   font-size: 1.9rem;
 }
 
-@media screen and (max-width: 768px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
-  }
-
-  .nav-icon {
-    top: 7%;
-  }
-}
-
 /* About Page Styles*/
 
-.title {
+.heading {
   font-weight: bold;
   font-style: italic;
 }
@@ -166,7 +155,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 9%;
 
   -webkit-animation: fadein 1.3s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.3s; /* Firefox < 16 */
@@ -183,4 +171,68 @@ body {
 
 .about-details > p {
   margin-top: 2rem;
+}
+
+/* Get Email Page Styles*/
+
+.get-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  -webkit-animation: fadein 1.3s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.3s; /* Firefox < 16 */
+  -ms-animation: fadein 1.3s; /* Internet Explorer */
+  -o-animation: fadein 1.3s; /* Opera < 12.1 */
+  animation: fadein 1.3s;
+
+}
+
+.get-email .email-msg {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  width: 33vw;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.get-email .email-input {
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.get-email .email-input .email-heading {
+  font-weight: bold;
+}
+
+.get-email .email-input .input-field {
+  margin-top: 0.8rem;
+  background-color: #f0e8cc;
+  height: 4.5rem;
+  width: 47rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.get-email .email-input .input-field input {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 70%;
+  outline: none;
+}
+
+.get-email .email-input .input-field button {
+  background: #1C4587;
+  color: white;
+  border: none;
+  padding: 0.55rem;
+  font-size: 1.3rem;
+  width: 8rem;
+  border-radius: 0.5rem;
 }
