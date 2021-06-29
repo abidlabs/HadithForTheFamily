@@ -1,5 +1,5 @@
 var navOpened = false;
-pages = ['home', 'about', 'email'];
+pages = ['home', 'about', 'getEmail'];
 currentPage = pages[0];
 
 const date = document.getElementById("date");

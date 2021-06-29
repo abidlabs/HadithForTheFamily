@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  font-family: 'Raleway', 'sans-serif';
 }
 
 html {
@@ -50,7 +49,7 @@ body {
 }
 
 .page-title {
-  font-family: "Courgette", cursive;
+  font-family: "Courgette", cursive !important;
   font-weight: bold;
   font-size: 3.375rem;
 }
@@ -219,6 +218,7 @@ body {
 }
 
 .get-email .email-input .input-field input {
+  font-family: 'Raleway', 'sans-serif';
   background: transparent;
   border: none;
   font-size: 2rem;
@@ -228,6 +228,7 @@ body {
 }
 
 .get-email .email-input .input-field button {
+  font-family: 'Raleway', 'sans-serif';
   background: #1C4587;
   color: white;
   border: none;
