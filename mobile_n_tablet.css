@@ -6,7 +6,7 @@
 
   .home {
     height: 83vh;
-    margin-top: 31%;
+    margin-top: 27%;
   }
 
   .hadith {
@@ -19,6 +19,10 @@
     font-size: 1.6rem;
     line-height: 2.6rem;
   }
+
+  .about { margin-top: 27%; }
+
+  .about-details { width: 85vw; }
 }
 
 /* Tablets / iPads */
@@ -30,7 +34,7 @@
 
   .home {
     height: 83vh;
-    margin-top: 15%;
+    margin-top: 17%;
   }
 
   .hadith {
@@ -42,4 +46,8 @@
     font-size: 1.4rem;
     line-height: 2.4rem;
   }
+
+  .about { margin-top: 17%; }
+
+  .about-details { width: 85vw; }
 }
