@@ -15,6 +15,7 @@ body {
   font-family: "Raleway", sans-serif;
   padding: 2rem;
   transition: background-color 0.5s;
+  font-weight: 200;
 }
 
 #parent {
@@ -59,6 +60,7 @@ body {
   font-size: 2rem;
   margin-top: 3rem;
   letter-spacing: 0.12rem;
+  font-weight: 600;
 }
 
 .hadith {
@@ -219,12 +221,17 @@ body {
 
 .get-email .email-input .input-field input {
   font-family: 'Raleway', 'sans-serif';
+  font-weight: 500;
   background: transparent;
   border: none;
   font-size: 2rem;
   padding: 1rem;
   width: 70%;
   outline: none;
+}
+
+.get-email .email-input .input-field input.submitted {
+  color: #666666;
 }
 
 .get-email .email-input .input-field button {
@@ -236,4 +243,9 @@ body {
   font-size: 1.3rem;
   width: 8rem;
   border-radius: 0.5rem;
+}
+
+.get-email .email-input .input-field button.success {
+  width: 10.5rem;
+  background-color: #0097A7;
 }

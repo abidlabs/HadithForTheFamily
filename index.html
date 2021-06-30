@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="./designs.css" />
     <link rel="stylesheet" href="./loader.css" />
     <link rel="stylesheet" href="./mobile_n_tablet.css" />
-    <link rel="stylesheet" href="./utils.css" />
+    <link rel="stylesheet" href="./shared_utils.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -58,18 +58,20 @@
         </div>
       </div>
 
-      <div  id="about" class="about display-none">
+      <div id="about" class="about display-none">
         <div class="page-title"><span>About</span></div>
 
         <div class="about-details">
           <p>
-            The Hadith are sayings attributed to the Prophet Muhammad (ﷺ) that teach us how to live good lives in accordance to the will of God.
+            The Hadith are sayings attributed to the Prophet Muhammad (ﷺ) that
+            teach us how to live good lives in accordance to the will of God.
           </p>
           <p>
-          <!-- <br> -->
-          <span class="heading">Hadith for the Family</span> is a project created by Abubakar Abid and the Abid Family. Each day, we select one Hadith, and
-          suggest a practical way to apply the Hadith with your family.
-          May Allah accept from us and guide us all.
+            <!-- <br> -->
+            <span class="heading">Hadith for the Family</span> is a project
+            created by Abubakar Abid and the Abid Family. Each day, we select
+            one Hadith, and suggest a practical way to apply the Hadith with
+            your family. May Allah accept from us and guide us all.
           </p>
           <p>May Allah accept from us and guide us all.</p>
         </div>
@@ -77,34 +79,61 @@
 
       <div id="getEmail" class="get-email display-none">
         <div class="page-title"><span>Get Hadith as Daily Emails</span></div>
-        <div class="email-msg">Get a Hadith delivered to your email every day that you can read with your family.</div>
+        <div class="email-msg">
+          Get a Hadith delivered to your email every day that you can read with
+          your family.
+        </div>
         <div class="email-input">
           <div class="email-heading"><span>Email address:</span></div>
           <div class="input-field">
-            <input type="email">
-            <button>Sign up</button>
+            <input id="userEmail" type="email" />
+            <button id="signUp" onclick="dailyEmailSignup()">Sign up</button>
           </div>
+          <p id="signupError" class="form-error"></p>
         </div>
       </div>
-
     </div>
-         <!--Loader -->
+    <!--Loader -->
     <div id="loader" class="holder">
-    <div class="preloader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div class="preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    </div>
+    <script src="./utils.js"></script>
+    <!--Firebase Config-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
 
-    <!--- Scripts-->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDC-AJL_Zu7PZJmUNqsVDK_qEJ9cYyoSyg",
+        authDomain: "hadith-of-the-day-d0123.firebaseapp.com",
+        projectId: "hadith-of-the-day-d0123",
+        storageBucket: "hadith-of-the-day-d0123.appspot.com",
+        messagingSenderId: "641579406219",
+        appId: "1:641579406219:web:e85e7f49f49ac5afa1558e",
+        measurementId: "G-4K47ZLY5MJ",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
     <script src="./script.js"></script>
   </body>
 </html>
