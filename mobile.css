@@ -52,35 +52,3 @@
     font-size: 1.7rem;
   }
 }
-
-/* Tablets / iPads */
-
-@media screen and (min-width: 576px) and (max-width: 992px) {
-  html {
-    font-size: 13px;
-  }
-
-  #parent {
-    margin-top: 23%;
-  }
-
-  .home {
-    height: 83vh;
-  }
-
-  .hadith {
-    width: 85vw;
-  }
-
-  .application {
-    width: 85vw;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-  }
-
-  .about-details { width: 85vw; }
-
-  .get-email .email-msg {
-    width: 85vw !important;
-  }
-}
