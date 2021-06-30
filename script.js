@@ -15,7 +15,6 @@ const root = document.getElementsByTagName('html')[0];
 const userEmailInput = document.getElementById("userEmail");
 const signup = document.getElementById("signUp");
 
-
 const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1OzOb4jUF0OY32RyHuEg1wqGioOkeR76Y5cfpEXfal1s/1/public/full?alt=json";
 
 var loading = true;
@@ -116,51 +115,6 @@ function showContent(pageName) {
   currentPage = pageName;
   closeNav();
   return currentPage;
-}
-
-
-function dailyEmailSignup() {
-  var email = document.getElementById("userEmail").value;
-  const submitError = document.getElementById('signupError');
-
-  if(!isValidEmail(email)) {
-    submitError.innerHTML = 'Invalid Email';
-    submitError.style.display = 'block';
-    return;
-  }
-
-  // check if provided email is already subscribed
-  const dbRef = firebase.database().ref();
-  dbRef.child("users").child(email.split('@')[0]).get().then((snapshot) => {
-    if (snapshot.exists()) {
-      snapshot = snapshot.val();
-      if (snapshot.email) {
-        if (snapshot.email === email) {
-          submitError.innerHTML = 'Email already subscribed';
-          submitError.style.display = 'block';
-        }
-      }
-    } else {
-      var usersRef = firebase.database().ref('users/'+email.split('@')[0]);
-
-      usersRef.set({
-        email: email,
-      }, (error) => {
-        if (error) {
-          // The write failed...
-        } else {
-          signup.classList.add('success');
-          signup.innerHTML = "✔ Signed up"
-          userEmailInput.classList.add('submitted');
-          submitError.style.display = 'none';
-          submitError.innerHTML = '';
-        }}
-      );
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-
 }
 
 window.onload = loadPageData;

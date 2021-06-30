@@ -86,7 +86,7 @@
         <div class="email-input">
           <div class="email-heading"><span>Email address:</span></div>
           <div class="input-field">
-            <input id="userEmail" type="email" />
+            <input id="userEmail" type="email" onkeyup="onEmailKeyUp(event)"/>
             <button id="signUp" onclick="dailyEmailSignup()">Sign up</button>
           </div>
           <p id="signupError" class="form-error"></p>
@@ -135,5 +135,6 @@
     </script>
 
     <script src="./script.js"></script>
+    <script src="./email_signup.js"></script>
   </body>
 </html>

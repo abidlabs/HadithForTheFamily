@@ -204,11 +204,11 @@ body {
   flex-direction: column;
 }
 
-.get-email .email-input .email-heading {
+.get-email .email-heading {
   font-weight: bold;
 }
 
-.get-email .email-input .input-field {
+.get-email .input-field {
   margin-top: 0.8rem;
   background-color: #f0e8cc;
   height: 4.5rem;
@@ -219,7 +219,7 @@ body {
   padding: 0 1rem;
 }
 
-.get-email .email-input .input-field input {
+.get-email .input-field input {
   font-family: 'Raleway', 'sans-serif';
   font-weight: 500;
   background: transparent;
@@ -230,11 +230,11 @@ body {
   outline: none;
 }
 
-.get-email .email-input .input-field input.submitted {
+.get-email input.submitted {
   color: #666666;
 }
 
-.get-email .email-input .input-field button {
+.get-email .input-field button {
   font-family: 'Raleway', 'sans-serif';
   background: #1C4587;
   color: white;
@@ -243,9 +243,10 @@ body {
   font-size: 1.3rem;
   width: 8rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.get-email .email-input .input-field button.success {
+.get-email .input-field button.success {
   width: 10.5rem;
   background-color: #0097A7;
 }

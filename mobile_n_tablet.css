@@ -1,5 +1,21 @@
 /* Designs for Mobile & Tablets Resolution */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
+
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 9.5px;
+  }
+
+  #parent {
+    margin-top: 39%;
+  }
+
+  .home {
+    height: 83vh;
+  }
+
   .sidenav {
     padding-top: 15px;
   }
@@ -9,20 +25,6 @@
 
   .nav-icon {
     top: 7%;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 9.5px;
-  }
-
-  #parent {
-    margin-top: 27%;
-  }
-
-  .home {
-    height: 83vh;
   }
 
   .hadith {
@@ -37,6 +39,18 @@
   }
 
   .about-details { width: 85vw; }
+
+  .get-email .page-title {
+    font-size: 2.7rem;
+  }
+
+  .get-email .email-msg, .email-input, .input-field {
+    width: 85vw !important;
+  }
+
+  .get-email .input-field input {
+    font-size: 1.7rem;
+  }
 }
 
 /* Tablets / iPads */
@@ -47,12 +61,11 @@
   }
 
   #parent {
-    margin-top: 17%;
+    margin-top: 23%;
   }
 
   .home {
     height: 83vh;
-
   }
 
   .hadith {
@@ -66,4 +79,8 @@
   }
 
   .about-details { width: 85vw; }
+
+  .get-email .email-msg {
+    width: 85vw !important;
+  }
 }
