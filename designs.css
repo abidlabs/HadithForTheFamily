@@ -149,9 +149,9 @@ body {
 
 .sidenav .coffee {
   position: absolute;
-    top: -5%;
-    left: 53%;
-    transition: left 0.5s;
+  top: -5%;
+  left: 53%;
+  transition: left 0.5s;
 }
 
 .sidenav a.support:hover .coffee {
