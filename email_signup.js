@@ -64,6 +64,5 @@ function resetSubmitButton() {
 }
 
 function onEmailKeyUp(event) {
-  console.log(event);
   resetSubmitButton();
 }
