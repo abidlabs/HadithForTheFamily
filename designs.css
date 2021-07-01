@@ -145,6 +145,19 @@ body {
   font-size: 1.9rem;
 }
 
+.sidenav a.support { position: relative; }
+
+.sidenav .coffee {
+  position: absolute;
+    top: -5%;
+    left: 53%;
+    transition: left 0.5s;
+}
+
+.sidenav a.support:hover .coffee {
+  left: 61%
+}
+
 /* About Page Styles*/
 
 .heading {
