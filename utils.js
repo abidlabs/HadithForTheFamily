@@ -7,3 +7,7 @@ function isValidEmail(email) {
     return true;
   return false;
 }
+
+function getRandomInteger(max) {
+  return Math.floor(Math.random() * max);
+}

@@ -1,6 +1,7 @@
 var navOpened = false;
 pages = ['home', 'about', 'getEmail'];
 currentPage = pages[0];
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const date = document.getElementById("date");
 const topic = document.getElementById("topic");
@@ -28,12 +29,33 @@ sheetReaders = {
     URL:GET_PUBLIC_SHEET_CELLS,
     responseExtractor : response => JSON.parse(response.currentTarget.response).feed.entry,
     responseInterpreters: {
-      lastRowReader: function readLastRow(response) {
-        date.textContent = response[response.length - 5].content.$t;
-        topic.textContent = response[response.length - 4].content.$t.toUpperCase();
-        hadith.textContent = response[response.length - 3].content.$t;
-        book.textContent = response[response.length - 2].content.$t.toUpperCase();
-        apply.textContent = response[response.length - 1].content.$t;
+      lastRowReader: function readLastRow(response, randomizeIfNotLatest = false) {
+        var cellsPerRow = 5;
+        var iterations = (response.length/5) - 1; // Discount the table header cells
+        response.splice(0, cellsPerRow); // Remove table header cells
+        var rowsArray = [];
+        for (var i = 0; i < iterations; i++) {
+          rowsArray.push(response.splice(0, cellsPerRow));
+        }
+        console.log(rowsArray)
+        var today = new Date();
+        today = `${monthNames[today.getMonth()]} ${today.getDate()}`
+        if (today !== rowsArray[rowsArray.length - 1][0].content.$t && randomizeIfNotLatest) {
+          console.log('picking random')
+          const randomInteger = getRandomInteger(rowsArray.length-1);
+          date.textContent = today;
+          topic.textContent = rowsArray[randomInteger][1].content.$t.toUpperCase();
+          hadith.textContent = rowsArray[randomInteger][2].content.$t
+          book.textContent = rowsArray[randomInteger][3].content.$t.toUpperCase();
+          apply.textContent = rowsArray[randomInteger][4].content.$t;
+        } else {
+          console.log('picking latest')
+          date.textContent = rowsArray[rowsArray.length - 1][0].content.$t;
+          topic.textContent = rowsArray[rowsArray.length - 1][1].content.$t.toUpperCase();
+          hadith.textContent = rowsArray[rowsArray.length - 1][2].content.$t
+          book.textContent = rowsArray[rowsArray.length - 1][3].content.$t.toUpperCase();
+          apply.textContent = rowsArray[rowsArray.length - 1][4].content.$t;
+        }
         return true;
       }
     }
@@ -50,7 +72,7 @@ function fetchSheetData() {
 
   xhttp.onload = (response) => {
     response = sheetReader.responseExtractor(response);
-    const loadResult = sheetReader.responseInterpreters.lastRowReader(response);
+    const loadResult = sheetReader.responseInterpreters.lastRowReader(response, true);
     if (loadResult) sheetReaders.onLoadSuccess();
   };
 
