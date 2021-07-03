@@ -37,11 +37,10 @@ sheetReaders = {
         for (var i = 0; i < iterations; i++) {
           rowsArray.push(response.splice(0, cellsPerRow));
         }
-        console.log(rowsArray)
+
         var today = new Date();
         today = `${monthNames[today.getMonth()]} ${today.getDate()}`
         if (today !== rowsArray[rowsArray.length - 1][0].content.$t && randomizeIfNotLatest) {
-          console.log('picking random')
           const randomInteger = getRandomInteger(rowsArray.length-1);
           date.textContent = today;
           topic.textContent = rowsArray[randomInteger][1].content.$t.toUpperCase();
@@ -49,7 +48,6 @@ sheetReaders = {
           book.textContent = rowsArray[randomInteger][3].content.$t.toUpperCase();
           apply.textContent = rowsArray[randomInteger][4].content.$t;
         } else {
-          console.log('picking latest')
           date.textContent = rowsArray[rowsArray.length - 1][0].content.$t;
           topic.textContent = rowsArray[rowsArray.length - 1][1].content.$t.toUpperCase();
           hadith.textContent = rowsArray[rowsArray.length - 1][2].content.$t

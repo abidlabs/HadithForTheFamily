@@ -10,34 +10,15 @@ function dailyEmailSignup() {
     return;
   }
 
-  const username = email.split("@")[0];
-  const mailServer = email.split("@")[1];
-  var mailServerArray = [mailServer];
-
-  // Check if email already exists
-  db.ref()
-    .child("users")
-    .child(username)
-    .get()
-    .then((snapshot) => {
-      if (snapshot.exists()) {
-        mailServerArray = snapshot.val();
-        if (mailServerArray.indexOf(mailServer) >=0) {
-          showSignupError("Email already subscribed");
-          return;
-        }
-        mailServerArray.push(mailServer);
-      }
-      var usersRef = db.ref("users/" + username);
-      usersRef.set(mailServerArray, (error) => {
-        if (error) {
-          // The write failed...
-          showSignupError("Failed to save email. Please try again later");
-        } else {
-          showSignupSuccess();
-        }
-      });
-    });
+  var usersRef = db.ref("users/");
+  usersRef.push({email: email}, (error) => {
+    if (error) {
+      // The write failed...
+      showSignupError("Failed to save email. Please try again later");
+    } else {
+      showSignupSuccess();
+    }
+  });
 }
 
 function showSignupError(errorMessage) {
