@@ -5,6 +5,12 @@
     font-size: 13px;
   }
 
+  .sidenav img.coffee {
+    top: 3%;
+    left: 57%;
+    height: 85%;
+  }
+
   #parent {
     margin-top: 23%;
   }

@@ -1,9 +1,5 @@
 /* Designs for Mobile & Tablets Resolution */
 @media screen and (max-width: 576px) {
-
-}
-
-@media screen and (max-width: 576px) {
   html {
     font-size: 9.5px;
   }
@@ -19,8 +15,15 @@
   .sidenav {
     padding-top: 15px;
   }
+
   .sidenav a {
     font-size: 18px;
+  }
+
+  .sidenav img.coffee {
+    top: 14%;
+    left: 71%;
+    height: 69%;
   }
 
   .nav-icon {
