@@ -66,7 +66,7 @@ body {
 .hadith {
   text-align: center;
   font-size: 1.8rem;
-  width: 43vw;
+  width: 70vw;
   margin-top: 3rem;
   margin-bottom: 0.7rem;
   padding: 1rem;
@@ -81,12 +81,12 @@ body {
 .application {
   padding: 1em;
   background-color: #f0e8cc;
-  width: 43vw;
+  width: 70vw;
   font-size: 1.3rem;
   font-weight: lighter;
   line-height: 2.3rem;
   margin-top: 3rem;
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 
 .emphasize {
