@@ -10,7 +10,10 @@ function dailyEmailSignup() {
     return;
   }
 
-  var usersRef = db.ref("users/");
+  const emailFirstLetter = email[0];
+  const mailServer = email.split('@')[1].split(/[.#$\[\]]/)[0];
+
+  var usersRef = db.ref(`users/${emailFirstLetter}/${mailServer}`);
   usersRef.push({email: email}, (error) => {
     if (error) {
       // The write failed...

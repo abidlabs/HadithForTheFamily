@@ -16,7 +16,19 @@ body {
   padding: 2rem;
   transition: background-color 0.5s;
   font-weight: 200;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* Internet Explorer 10+ */
 }
+
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 
 #parent {
   right: 0;
@@ -33,20 +45,11 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-
   -webkit-animation: fadein 1.3s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.3s; /* Firefox < 16 */
   -ms-animation: fadein 1.3s; /* Internet Explorer */
   -o-animation: fadein 1.3s; /* Opera < 12.1 */
   animation: fadein 1.3s;
-}
-
-.home::-webkit-scrollbar {
-  width: 0;
-  height: 0;
 }
 
 .page-title {
