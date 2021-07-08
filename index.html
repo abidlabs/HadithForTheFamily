@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, minimum-scale=1" name="viewport" />
     <!-- Styling -->
-    <link rel="stylesheet" href="./designs.css" />
-    <link rel="stylesheet" href="./loader.css" />
-    <link rel="stylesheet" href="./mobile.css" />
-    <link rel="stylesheet" href="./tablet.css" />
-    <link rel="stylesheet" href="./shared_utils.css" />
+    <link rel="stylesheet" href="./styles/designs.css" />
+    <link rel="stylesheet" href="./styles/loader.css" />
+    <link rel="stylesheet" href="./styles/mobile.css" />
+    <link rel="stylesheet" href="./styles/tablet.css" />
+    <link rel="stylesheet" href="./styles/shared_utils.css" />
 
     <meta property="og:url" content="https://hadithforthefamily.com/" />
     <meta property="og:type" content="website" />
@@ -40,7 +40,7 @@
       <a onclick="showContent('home')">Home</a>
       <a onclick="showContent('about')">About</a>
       <a onclick="showContent('getEmail')">Daily Email</a>
-      <a class="support" href="https://www.buymeacoffee.com/abubakarabid" target="_blank">Support<img class="coffee" src ="./coffee.ico"></a>
+      <a class="support" href="https://www.buymeacoffee.com/abubakarabid" target="_blank">Support<img class="coffee" src ="./assets/coffee.ico"></a>
     </div>
     <div id="parent" class="parent-container">
       <div id="home" class="home" style="display: none">
@@ -73,14 +73,14 @@
         </div>
 
         <!--Share on Social Media-->
-        <div class="share-icon">
-          <img src="./share.svg">
+        <div class="share-icon" onclick="toggleShareOptions()">
+          <img src="./assets/share.svg">
         </div>
-        <div id="share" class="share-options">
+        <div id="shareOptions" class="share-options">
           <!--Social Media Sharing Popup-->
-          <a id="share-tweet" href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank"><img src="./twitter.svg" class="twitter-share-button" ></a>
-          <img src="./facebook.svg">
-          <img src="./whatsapp.svg">
+          <a id="share-twitter" href="https://twitter.com/intent/tweet" target="_blank" onclick="toggleShareOptions()"><img src="./assets/twitter.svg" class="twitter-share-button" ></a>
+          <a id="share-facebook" target="_blank"><img src="./assets/facebook.svg" onclick="toggleShareOptions()"></a>
+          <a id="share-whatsapp" target="_blank" data-action="share/whatsapp/share" onclick="toggleShareOptions()"><img src="./assets/whatsapp.svg"></a>
         </div>
       </div>
 
@@ -136,9 +136,9 @@
         <div></div>
       </div>
     </div>
-    <script src="./general.js"></script>
-    <script src="./sidenav.js"></script>
-    <script src="./utils.js"></script>
+    <script src="./scripts/general.js"></script>
+    <script src="./scripts/sidenav.js"></script>
+    <script src="./scripts/utils.js"></script>
     <!--Firebase Config-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase.js"></script>
@@ -164,7 +164,8 @@
       firebase.analytics();
     </script>
 
-    <script src="./email_signup.js"></script>
+    <script src="./scripts/email_signup.js"></script>
+    <script src="./scripts/share_social_media.js"></script>
 
   </body>
 </html>
