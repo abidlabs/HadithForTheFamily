@@ -94,6 +94,7 @@ body::-webkit-scrollbar {
   background: white;
   border-radius: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 0.3rem;
   cursor: pointer;
@@ -102,7 +103,9 @@ body::-webkit-scrollbar {
 .share-icon img { vertical-align: middle; }
 
 .share-options {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  bottom: 31%;
   background-color: white;
   border-radius: 0.5rem;
   display: flex;
