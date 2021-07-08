@@ -71,6 +71,17 @@
             basis.
           </span>
         </div>
+
+        <!--Share on Social Media-->
+        <div class="share-icon">
+          <img src="./share.svg">
+        </div>
+        <div id="share" class="share-options">
+          <!--Social Media Sharing Popup-->
+          <a id="share-tweet" href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank"><img src="./twitter.svg" class="twitter-share-button" ></a>
+          <img src="./facebook.svg">
+          <img src="./whatsapp.svg">
+        </div>
       </div>
 
       <div id="about" class="about display-none">
@@ -109,6 +120,7 @@
         </div>
       </div>
     </div>
+
     <!--Loader -->
     <div id="loader" class="holder">
       <div class="preloader">
@@ -124,6 +136,8 @@
         <div></div>
       </div>
     </div>
+    <script src="./general.js"></script>
+    <script src="./sidenav.js"></script>
     <script src="./utils.js"></script>
     <!--Firebase Config-->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -150,8 +164,7 @@
       firebase.analytics();
     </script>
 
-    <script src="./general.js"></script>
     <script src="./email_signup.js"></script>
-    <script src="./sidenav.js"></script>
+
   </body>
 </html>

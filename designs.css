@@ -23,12 +23,10 @@ body {
   -ms-overflow-style: none !important; /* Internet Explorer 10+ */
 }
 
-
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-
 
 #parent {
   right: 0;
@@ -90,6 +88,30 @@ body::-webkit-scrollbar {
   line-height: 2.3rem;
   margin-top: 3rem;
   line-height: 2.5rem;
+}
+
+.share-icon {
+  background: white;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.share-icon img { vertical-align: middle; }
+
+.share-options {
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  width: 15rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.share-options img {
+ cursor: pointer;
 }
 
 .emphasize {

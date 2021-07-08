@@ -23,7 +23,10 @@ var loading = true;
 
 // Sheet Reading Engine
 sheetReaders = {
-  onLoadSuccess: disableLoading,
+  onLoadSuccess: function() {
+    disableLoading();
+    setTweetText(topic.textContent, hadith.textContent,book.textContent)
+  },
   publicSheetRawCells : {
     // Reads a Public Sheet's Raw Response -> Parses it to JSON -> Extracts the 'feed.entry' which carries all cells of sheets in an array
     URL:GET_PUBLIC_SHEET_CELLS,
@@ -114,6 +117,24 @@ function showContent(pageName) {
   currentPage = pageName;
   closeNav();
   return currentPage;
+}
+
+function tempAlert(msg,duration)
+{
+ var el = document.createElement("div");
+ el.setAttribute("style","position:absolute;top:40%;left:20%;background-color:white;");
+ el.innerHTML = msg;
+ setTimeout(function(){
+  el.parentNode.removeChild(el);
+ },duration);
+ document.body.appendChild(el);
+}
+
+function setTweetText(topic, hadith, book) {
+  // check for 280 character limit
+  const tweet = `${topic}: ${hadith} - ${book}`;
+  document.getElementById('share-tweet').href= `https://twitter.com/intent/tweet?text=${tweet}`;
+  console.log('tweet', tweet);
 }
 
 window.onload = loadPageData;
