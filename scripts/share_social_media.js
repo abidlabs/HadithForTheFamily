@@ -25,7 +25,6 @@ function setFacebookSharing(text) {
 
 function toggleShareOptions() {
   const content = document.getElementById("shareOptions");
-  debugger;
   const contentDisplay = content.style.display || "none";
   content.style.display = contentDisplay === "none" ? "flex" : "none";
 }
