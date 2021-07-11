@@ -14,7 +14,7 @@ function setTwitterSharing(tweet) {
 function setWhatsappSharing(text) {
   document.getElementById(
     "share-whatsapp"
-  ).href = `https://wa.me/?text=check`;
+  ).href = `https://wa.me/?text=www.hadithforthefamily.com`;
 }
 
 function setFacebookSharing(text) {
