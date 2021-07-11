@@ -14,7 +14,7 @@ function setTwitterSharing(tweet) {
 function setWhatsappSharing(text) {
   document.getElementById(
     "share-whatsapp"
-  ).href = `https://wa.me/?text=I'm%20interested%20in%20your%20car%20for%20sale`;
+  ).href = `https://wa.me/?text=check`;
 }
 
 function setFacebookSharing(text) {
