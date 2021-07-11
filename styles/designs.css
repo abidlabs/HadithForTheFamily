@@ -91,32 +91,28 @@ body::-webkit-scrollbar {
 }
 
 .share-icon {
-  background: white;
+  background-color: #3D3B3B;
   border-radius: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 0.3rem;
   cursor: pointer;
 }
 
-.share-icon img { vertical-align: middle; }
+.share-icon img {
+  vertical-align: middle;
+  cursor: pointer;
+}
 
 .share-options {
-  margin-bottom: 1rem;
-  position: relative;
-  bottom: 31%;
-  background-color: white;
+  position: absolute;
+  top: 50%;
+  background-color: #3D3B3B;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-around;
   width: 15rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.share-options img {
- cursor: pointer;
 }
 
 #shareOptions {

@@ -54,4 +54,19 @@
   .get-email .input-field input {
     font-size: 1.7rem;
   }
+
+  .share-options {
+    padding: 0.5rem;
+  }
+
+  .share-options img {
+    height: 70%;
+    width: auto;
+  }
+
+  .share-options a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

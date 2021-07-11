@@ -10,6 +10,8 @@
   text-align: center;
 }
 
+/* ---- Fade In Begins ----*/
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -48,3 +50,5 @@
     opacity: 1;
   }
 }
+
+/* ---- Fade In Ends ----*/
