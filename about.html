@@ -116,8 +116,10 @@
         <div class="email-input">
           <div class="email-heading"><span>Email address:</span></div>
           <div class="input-field">
-            <input id="userEmail" type="email" onkeyup="onEmailKeyUp(event)"/>
-            <button id="signUp" onclick="dailyEmailSignup()">Sign up</button>
+            <form   action="https://formspree.io/f/xwkanrrb" method="POST">
+              <input id="userEmail" type="email" name="email" onkeyup="onEmailKeyUp(event)"/>
+              <button id="signUp" type="submit" onclick="dailyEmailSignup()">Sign up</button>
+            </form>
           </div>
           <p id="signupError" class="form-error"></p>
         </div>

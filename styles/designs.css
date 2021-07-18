@@ -252,7 +252,7 @@ body::-webkit-scrollbar {
   font-weight: bold;
 }
 
-.get-email .input-field {
+.get-email .input-field form {
   margin-top: 0.8rem;
   background-color: #f0e8cc;
   height: 4.5rem;
