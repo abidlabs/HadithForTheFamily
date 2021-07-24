@@ -11,6 +11,9 @@ html {
 
   overflow: scroll;
   overflow-x: hidden;
+
+  scrollbar-width: none;
+  scrollbar-color: unset;
 }
 
 ::-webkit-scrollbar, ::-moz-scrollbar {
@@ -35,6 +38,9 @@ body {
   scrollbar-width: none !important; /* Firefox */
   -ms-overflow-style: none !important; /* Internet Explorer 10+ */
 
+  scrollbar-width: none;
+  scrollbar-color: unset;
+
 }
 
 body::-webkit-scrollbar {
@@ -47,7 +53,13 @@ body::-webkit-scrollbar {
   transition: 0.5s;
   position: relative;
   margin-top: 9%;
+  scrollbar-width: none;
+  scrollbar-color: unset;
+}
 
+.child {
+  scrollbar-width: none;
+  scrollbar-color: unset;
 }
 
 .child::-webkit-scrollbar {
