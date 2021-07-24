@@ -13,13 +13,13 @@ html {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar, ::-moz-scrollbar {
   width: 0;  /* Remove scrollbar space */
   background: transparent;  /* Optional: just make scrollbar invisible */
 }
 
 /* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb, ::-moz-scrollbar {
   background: #FF0000;
 }
 
@@ -50,8 +50,14 @@ body::-webkit-scrollbar {
 
 }
 
-.child {
+.child::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
 
+.child::-webkit-scrollbar-thumb {
+  background: #FF0000;
 }
 
 .home {
