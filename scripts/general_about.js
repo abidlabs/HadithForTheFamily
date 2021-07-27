@@ -120,3 +120,145 @@ function showContent(pageName) {
 }
 
 window.onload = loadPageData;
+
+
+// Side Nav Scripts Starts
+
+function toggleNav() {
+  navOpened = !navOpened;
+  if (navOpened) openNav();
+  else closeNav();
+}
+
+function openNav() {
+  document.getElementById("sidenav").style.right = "0vw";
+  document.getElementById("navIcon").style.right = "9.5rem";
+  document.getElementById("parent").style.right = "15.625rem";
+
+  navOpened = true;
+}
+
+function closeNav() {
+  document.getElementById("sidenav").style.right = "-15.625rem";
+  document.getElementById("navIcon").style.right = "-6.25rem";
+  document.getElementById("parent").style.right = "0rem";
+
+  navOpened = false;
+}
+
+// Side Nav Script Ends
+
+// Share to Social Media Script Starts
+
+function setSocialMediaSharing() {
+  setTwitterSharing();
+  setWhatsappSharing();
+  setFacebookSharing();
+}
+
+function setTwitterSharing(tweet) {
+  // check for 280 character limit
+  document.getElementById(
+    "share-twitter"
+  ).href = `https://twitter.com/intent/tweet?text=www.hadithforthefamily.com`;
+}
+
+function setWhatsappSharing(text) {
+  document.getElementById(
+    "share-whatsapp"
+  ).href = `https://wa.me/?text=www.hadithforthefamily.com`;
+}
+
+function setFacebookSharing(text) {
+  document.getElementById(
+    "share-facebook"
+  ).href = `https://www.facebook.com/sharer/sharer.php?u=www.hadithforthefamily.com`;
+}
+
+function toggleShareOptions() {
+  const content = document.getElementById("shareOptions");
+  const contentDisplay = content.style.display || "none";
+  content.style.display = contentDisplay === "none" ? "flex" : "none";
+}
+
+function hideShareOptions() {
+  document.getElementById("shareOptions").style.display = "none";
+}
+
+// Share to Social Media Script Ends
+
+// Email Signup Script Starts
+
+const submitError = document.getElementById("signupError");
+
+function dailyEmailSignup() {
+  var db = firebase.database();
+  enableLoading();
+  var email = document.getElementById("userEmail").value;
+
+  if (!isValidEmail(email)) {
+    showSignupError("Invalid Email");
+    return;
+  }
+
+  const emailFirstLetter = email[0];
+  const mailServer = email.split('@')[1].split(/[.#$\[\]]/)[0];
+
+  var usersRef = db.ref(`users/${emailFirstLetter}/${mailServer}`);
+  usersRef.push({email: email}, (error) => {
+    if (error) {
+      // The write failed...
+      showSignupError("Failed to save email. Please try again later");
+    } else {
+      showSignupSuccess();
+    }
+  });
+}
+
+function showSignupError(errorMessage) {
+  submitError.innerHTML = errorMessage;
+  submitError.style.display = "block";
+  disableLoading();
+}
+
+function showSignupSuccess() {
+  signup.classList.add("success");
+  signup.innerHTML = "✔ Signed up";
+  userEmailInput.classList.add("submitted");
+  submitError.style.display = "none";
+  submitError.innerHTML = "";
+  disableLoading();
+}
+
+function resetSubmitButton() {
+  signup.classList.remove("success");
+  signup.innerHTML = "Sign up";
+  userEmailInput.classList.remove("submitted");
+  submitError.style.display = "none";
+  submitError.innerHTML = "";
+}
+
+function onEmailKeyUp(event) {
+  resetSubmitButton();
+}
+
+
+// Email Signup Script Ends
+
+// General Utility Script Starts
+
+function isValidEmail(email) {
+  if (
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+     email
+    )
+  )
+    return true;
+  return false;
+}
+
+function getRandomInteger(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// General Utility Script Ends
