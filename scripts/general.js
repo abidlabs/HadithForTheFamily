@@ -32,7 +32,38 @@ sheetReaders = {
     URL:GET_PUBLIC_SHEET_CELLS,
     responseExtractor : response => JSON.parse(response.currentTarget.response).feed.entry,
     responseInterpreters: {
-      lastRowReader: function readLastRow(response, randomizeIfNotLatest = false) {
+      latestInAnyRowReader: function readLatestInAnyRow(response) {
+        // Finds latest in any row and renders it. If not present, renders random row
+        var cellsPerRow = 5;
+        var iterations = (response.length/5) - 1; // Discount the table header cells
+        response.splice(0, cellsPerRow); // Remove table header cells
+        var rowsArray = [];
+        for (var i = 0; i < iterations; i++) {
+          rowsArray.push(response.splice(0, cellsPerRow));
+        }
+
+        var today = new Date();
+        today = `${monthNames[today.getMonth()]} ${today.getDate()}`;
+        const todaysRow = rowsArray.find(row => row[0].content.$t === today);
+        if (todaysRow) {
+          date.textContent = today;
+          topic.textContent = todaysRow[1].content.$t.toUpperCase();
+          hadith.textContent = todaysRow[2].content.$t
+          book.textContent = todaysRow[3].content.$t.toUpperCase();
+          apply.textContent = todaysRow[4].content.$t;
+        } else {
+          // There is no row against today's date. Select random
+          console.log('Latest not found. Selecting random')
+          const randomInteger = getRandomInteger(rowsArray.length-1);
+          date.textContent = today;
+          topic.textContent = rowsArray[randomInteger][1].content.$t.toUpperCase();
+          hadith.textContent = rowsArray[randomInteger][2].content.$t
+          book.textContent = rowsArray[randomInteger][3].content.$t.toUpperCase();
+          apply.textContent = rowsArray[randomInteger][4].content.$t;
+        }
+        return true;
+      },
+      lastRowReader: function readLastRow(response, randomizeIfNotLatest = false) { // Reads last row. If it has latest date, renders it, else renders random row if randomizeIfNotLatest flag set
         var cellsPerRow = 5;
         var iterations = (response.length/5) - 1; // Discount the table header cells
         response.splice(0, cellsPerRow); // Remove table header cells
@@ -73,7 +104,7 @@ function fetchSheetData() {
 
   xhttp.onload = (response) => {
     response = sheetReader.responseExtractor(response);
-    const loadResult = sheetReader.responseInterpreters.lastRowReader(response, true);
+    const loadResult = sheetReader.responseInterpreters.latestInAnyRowReader(response, true);
     if (loadResult) sheetReaders.onLoadSuccess();
   };
 
