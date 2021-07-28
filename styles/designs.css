@@ -306,9 +306,17 @@ body::-webkit-scrollbar {
   background: transparent !important;
   border: none;
   font-size: 2rem;
-  padding: 1rem;
   width: 70%;
   outline: none;
+}
+
+/* Remove auto fill bg color style */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px #f0e8cc inset !important;
 }
 
 .get-email input.submitted {
