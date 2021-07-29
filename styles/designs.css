@@ -298,7 +298,6 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  width: 85vw !important;
 }
 
 .get-email .input-field input {
@@ -398,6 +397,10 @@ input:-webkit-autofill:active
 
   .get-email .input-field input {
     font-size: 1.7rem;
+  }
+
+  .get-email .input-field form {
+    width: 85vw !important;
   }
 
   .share-options {
