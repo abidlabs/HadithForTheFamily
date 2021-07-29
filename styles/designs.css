@@ -298,6 +298,7 @@ body::-webkit-scrollbar {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+  width: 85vw !important;
 }
 
 .get-email .input-field input {
