@@ -255,6 +255,10 @@ body::-webkit-scrollbar {
   margin-top: 2rem;
 }
 
+.about .footer {
+  margin-top: 3rem;
+}
+
 /* Get Email Page Styles*/
 
 .get-email {
