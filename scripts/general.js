@@ -53,7 +53,6 @@ sheetReaders = {
           apply.textContent = todaysRow[4].content.$t;
         } else {
           // There is no row against today's date. Select random
-          console.log('Latest not found. Selecting random')
           const randomInteger = getRandomInteger(rowsArray.length-1);
           date.textContent = today;
           topic.textContent = rowsArray[randomInteger][1].content.$t.toUpperCase();
@@ -239,6 +238,7 @@ function dailyEmailSignup() {
     if (error) {
       // The write failed...
       showSignupError("Failed to save email. Please try again later");
+      console.log('Signup Error',error)
     } else {
       showSignupSuccess();
     }
