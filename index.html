@@ -117,7 +117,7 @@
           <div class="input-field">
             <!--  -->
             <form action="https://formspree.io/f/xdoywodp" method="POST">
-              <input id="userEmail" type="email" name="email" onkeyup="onEmailKeyUp(event)"/>
+              <input id="userEmail" type="email" name="email" onkeyup="onEmailKeyUp(event)" onkeydown="return (event.keyCode!=13);"/>
               <button id="signUp" type="submit" onclick="dailyEmailSignup()">Sign up</button>
             </form>
           </div>
