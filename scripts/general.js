@@ -34,13 +34,14 @@ sheetReaders = {
     responseExtractor : response => JSON.parse(response.currentTarget.response).feed.entry,
     responseInterpreters: {
       latestInAnyRowReader: function readLatestInAnyRow(response) {
-        // Finds latest in any row and renders it. If not present, renders random row
-        var cellsPerRow = 5;
-        var iterations = (response.length/5) - 1; // Discount the table header cells
-        response.splice(0, cellsPerRow); // Remove table header cells
         var rowsArray = [];
-        for (var i = 0; i < iterations; i++) {
-          rowsArray.push(response.splice(0, cellsPerRow));
+        // Finds latest in any row and renders it. If not present, renders random row
+        { let cellsPerRow = 5;let iterations = (response.length/5) - 1; // Discount the table header cells
+          response.splice(0, cellsPerRow); // Remove table header cells
+
+          for (var i = 0; i < iterations; i++) {
+            rowsArray.push(response.splice(0, cellsPerRow));
+          }
         }
 
         var today = new Date();
@@ -91,6 +92,36 @@ sheetReaders = {
         return true;
       }
     }
+  },
+  sheetson: {
+    responseExtractor: response => response.results,
+    responseInterpreters: {
+      latestInAnyRowReader: function readLatestInAnyRow(response){
+        // Finds latest in any row and renders it. If not present, renders random row
+        console.log('responseIntepreter', response)
+        // response carries array of rows
+        var today = new Date();
+        today = `${monthNames[today.getMonth()]} ${today.getDate()}`;
+        const todaysRow = response.find(row => row.Date === today);
+
+        if (todaysRow) {
+          date.textContent = today;
+          topic.textContent = todaysRow.Topic.toUpperCase();
+          hadith.textContent = todaysRow.Hadith;
+          book.textContent = todaysRow.Book.toUpperCase();
+          apply.textContent = todaysRow.Application;
+        } else {
+          // There is no row against today's date. Select random
+          const randomInteger = getRandomInteger(response.length-1);
+          date.textContent = today;
+          topic.textContent = response[randomInteger].Topic.toUpperCase();
+          hadith.textContent = response[randomInteger].Hadith;
+          book.textContent = response[randomInteger].Book.toUpperCase();
+          apply.textContent = response[randomInteger].Application;
+        }
+        return true;
+      }
+    }
   }
 }
 
@@ -99,19 +130,33 @@ sheetReaders = {
  * This function invokes the response reader function. For changing the response interpretation, change the used sheetReader
  */
 function fetchSheetData() {
-  xhttp = new XMLHttpRequest();
-  const sheetReader = sheetReaders.publicSheetRawCells;
+    const sheetReader = sheetReaders.sheetson;
 
-  xhttp.onload = (response) => {
-    response = sheetReader.responseExtractor(response);
+  // Sheetson
+  fetch(`https://api.sheetson.com/v2/sheets/Data?limit=100`, {
+    headers: {
+      "Authorization": "Bearer RREi1Oa3qfiS6Viumt647_i_vsMZIsT8z0R09S3vQgNLJCjrLcIJUNl9-Ks",
+      "X-Spreadsheet-Id": "1y9FtAbe4TRAxPLYtBLmnrPx09budXEzVOU82OwtjP6o"
+    }
+  }).then(r => r.json())
+  .then(result => {
+    let response = sheetReader.responseExtractor(result);
     const loadResult = sheetReader.responseInterpreters.latestInAnyRowReader(response, true);
     if (loadResult) sheetReaders.onLoadSuccess();
-  };
+  })
+  // xhttp = new XMLHttpRequest();
+  // const sheetReader = sheetReaders.publicSheetRawCells;
 
-  xhttp.open("GET", sheetReader.URL);
-  xhttp.send();
+  // xhttp.onload = (response) => {
+  //   response = sheetReader.responseExtractor(response);
+  //   const loadResult = sheetReader.responseInterpreters.latestInAnyRowReader(response, true);
+  //   if (loadResult) sheetReaders.onLoadSuccess();
+  // };
 
-  return xhttp;
+  // xhttp.open("GET", sheetReader.URL);
+  // xhttp.send();
+
+  // return xhttp;
 }
 
 function loadPageData() {
