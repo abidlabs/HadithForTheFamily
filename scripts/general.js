@@ -98,7 +98,6 @@ sheetReaders = {
     responseInterpreters: {
       latestInAnyRowReader: function readLatestInAnyRow(response){
         // Finds latest in any row and renders it. If not present, renders random row
-        console.log('responseIntepreter', response)
         // response carries array of rows
         var today = new Date();
         today = `${monthNames[today.getMonth()]} ${today.getDate()}`;
