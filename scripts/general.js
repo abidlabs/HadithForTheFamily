@@ -16,7 +16,7 @@ const root = document.getElementsByTagName('html')[0];
 const userEmailInput = document.getElementById("userEmail");
 const signup = document.getElementById("signUp");
 
-const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1OzOb4jUF0OY32RyHuEg1wqGioOkeR76Y5cfpEXfal1s/1/public/full?alt=json";
+const GET_PUBLIC_SHEET_CELLS = "https://spreadsheets.google.com/feeds/cells/1y9FtAbe4TRAxPLYtBLmnrPx09budXEzVOU82OwtjP6o/1/public/full?alt=json";
 
 var loading = true;
 
@@ -107,7 +107,7 @@ function fetchSheetData() {
     if (loadResult) sheetReaders.onLoadSuccess();
   };
 
-  xhttp.open("GET",sheetReader.URL);
+  xhttp.open("GET", sheetReader.URL);
   xhttp.send();
 
   return xhttp;
